@@ -117,7 +117,7 @@ This an example of such configuration file:
 
 ```json
 {
-  "default": "1.16",
+  "default": "1.26",
   "exceptions": [
     {
       "exercise": "strain",
@@ -127,7 +127,7 @@ This an example of such configuration file:
 }
 ```
 
-With such configuration, all `go.mod` files will be expected to have the `1.16` version of Go,
+With such configuration, all `go.mod` files will be expected to have the `1.26` version of Go,
 except the exercise `strain`, which must have version `1.18` in its `go.mod`.
 Specifying the `-v, --goversion` flag overrides the default version specified in this file.
 
@@ -139,13 +139,13 @@ Specifying the `-v, --goversion` flag overrides the default version specified in
 
   * `gomod-sync check`
 
-* Check if all `go.mod` files of exercises in the `exercises` folder have the `1.16` Go version:
+* Check if all `go.mod` files of exercises in the `exercises` folder have the `1.26` Go version:
 
-  * `gomod-sync check --goversion 1.16 --exercises ./exercises`
+  * `gomod-sync check --goversion 1.26 --exercises ./exercises`
 
-* Update all `go.mod` files of exercises in the `exercises` folder have the `1.16` Go version:
+* Update all `go.mod` files of exercises in the `exercises` folder have the `1.26` Go version:
 
-  * `gomod-sync update --goversion 1.16 --exercises ./exercises`
+  * `gomod-sync update --goversion 1.26 --exercises ./exercises`
 
 * Update all `go.mod` files, using a config file to specify the versions of exercises:
 
