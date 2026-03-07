@@ -62,30 +62,24 @@ Available Commands:
 
 ## Commands
 
-- `gomod-sync check -v target_version [-e exercises_path] [-c config_file]`
-  checks if all `go.mod` files are in the target version
-- `gomod-sync completion`
-  generate the autocompletion script for the specified shell
-- `gomod-sync help`
-  Help about any command
-- `gomod-sync list [-e exercises_path]`
-  list `go.mod` files and the Go version they specify
-- `gomod-sync update -v target_version [-e exercises_path] [-c config_file]`
-  updates `go.mod` files to the target version
+- `gomod-sync check -v target_version [-e exercises_path] [-c config_file]` checks if all `go.mod` files are in the target version
+- `gomod-sync completion` generate the autocompletion script for the specified shell
+- `gomod-sync help` Help about any command
+- `gomod-sync list [-e exercises_path]` list `go.mod` files and the Go version they specify
+- `gomod-sync update -v target_version [-e exercises_path] [-c config_file]` updates `go.mod` files to the target version
 
 ## Flags
 
-- `-c, --config config_file`
-  path to the JSON configuration file.  (default `"config.json"`)
-- `-e, --exercises exercises_path`
-  path to the exercises folder. `go.mod` files will be recursively searched inside this directory. (default `"../exercises"`)
-- `-v, --goversion target_version`
-  target go version that all go.mod files are expected to have. 
+- `-c, --config config_file` path to the JSON configuration file.
+  (default `"config.json"`)
+- `-e, --exercises exercises_path` path to the exercises folder.
+  `go.mod` files will be recursively searched inside this directory.
+  (default `"../exercises"`)
+- `-v, --goversion target_version` target go version that all go.mod files are expected to have. 
   This will be used to check if the `go.mod` files are in the expected version in case of the check command, and to update all `go.mod` files to this version in the case of the update command.
   Using this flag will override the version specified in the config file.
 - `-h, --help`
   help for gomod-sync
-
 
 ## Configuration file
 
@@ -100,7 +94,7 @@ This an example of such configuration file:
 
 ```json
 {
-  "default": "1.16",
+  "default": "1.26",
   "exceptions": [
     {
       "exercise": "strain",
@@ -110,16 +104,16 @@ This an example of such configuration file:
 }
 ```
 
-With such configuration, all `go.mod` files will be expected to have the `1.16` version of Go, except the exercise `strain`, which must have version `1.18` in its `go.mod`.
+With such configuration, all `go.mod` files will be expected to have the `1.26` version of Go, except the exercise `strain`, which must have version `1.18` in its `go.mod`.
 Specifying the `-v, --goversion` flag overrides the default version specified in this file.
 
 ## Examples
 
 * Check if all `go.mod` files of exercises in the `../exercises` folder have the default version specified in the `config.json` file:
   * `gomod-sync check`
-* Check if all `go.mod` files of exercises in the `exercises` folder have the `1.16` Go version:
-  * `gomod-sync check --goversion 1.16 --exercises ./exercises`
-* Update all `go.mod` files of exercises in the `exercises` folder have the `1.16` Go version:
-  * `gomod-sync update --goversion 1.16 --exercises ./exercises`
+* Check if all `go.mod` files of exercises in the `exercises` folder have the `1.26` Go version:
+  * `gomod-sync check --goversion 1.26 --exercises ./exercises`
+* Update all `go.mod` files of exercises in the `exercises` folder have the `1.26` Go version:
+  * `gomod-sync update --goversion 1.26 --exercises ./exercises`
 * Update all `go.mod` files, using a config file to specify the versions of exercises:
   * `gomod-sync update --config a_dir/config.json --exercises ./exercises`
