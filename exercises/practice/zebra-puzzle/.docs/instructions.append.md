@@ -1,6 +1,6 @@
 # Instructions append
 
-## Implementation
+## Track specific instructions
 
 Define a single function, SolvePuzzle, which returns a solution
 containing two strings, whose values are the answers to the

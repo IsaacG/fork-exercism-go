@@ -1,6 +1,6 @@
 # Instructions append
 
-## Implementation
+## Track specific instructions
 
 In package twobucket, implement a Go func, Solve, with the following signature:
 
