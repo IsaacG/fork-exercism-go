@@ -1,0 +1,17 @@
+name: Check practice exercises are sorted
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  configlet:
+    uses: IsaacG/github-actions/.github/workflows/sorted.yml@main
+    with:
+      ordering: difficulty-then-slug
